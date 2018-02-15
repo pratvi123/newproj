@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary data - Simple linear regression | Kaggle</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">    <meta name="theme-color" content="#008ABC" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://stats.g.doubleclick.net" /><link rel="dns-prefetch" href="https://js.intercomcdn.com" /><link rel="preload" href="https://az416426.vo.msecnd.net/scripts/a/ai.0.js" as=script /><link rel="dns-prefetch" href="https://kaggle2.blob.core.windows.net" />
+    <link href="/content/v/d420a040e581/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="manifest" href="/static/json/manifest.json">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel='stylesheet' type='text/css'>
+                    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=72f4ef2ebe4f"/>
+        <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=aea6e8a29b8f"/>
+        <script>
+            
+            (function () {
+                var originalError = window.onerror;
+
+                window.onerror = function (message, url, lineNumber, columnNumber, error) {
+                    var handled = originalError && originalError(message, url, lineNumber, columnNumber, error);
+                    var blockedByCors = message && message.toLowerCase().indexOf("script error") >= 0;
+                    return handled || blockedByCors;
+                };
+            })();
+        </script>
+    <script>
+        var appInsights=window.appInsights||function(config){
+        function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"5b3d6014-f021-4304-8366-3cf961d5b90f",
+            disableAjaxTracking: true
+        });
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    
+    
+    
+ 
+    
+    <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-12629138-1', 'auto');
+    ga('set', 'displayFeaturesTask', null);
+    ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+    
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq("set", "autoConfig", "false", "136809193586742");
+    fbq('init', '136809193586742'); 
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=136809193586742&ev=PageView&noscript=1"/>
+</noscript>
+
+    
+
+    <script>
+         window.intercomSettings = {
+        app_id: "koj6gxx6",
+            name: "prathvimendon",
+            email: "prathvikumari1805@gmail.com",
+            created_at: 1507794362,
+            user_hash: "e3f85f4ca648ecc381bacb7458bd773eec8913dd155b212ce401c1167e450c1e",
+            "last_visit_date_at": 1518504257,  
+            "is_activated": true,
+            "is_locked_out": false,
+            "points": 0,
+             "ranking": 0,
+             "tier": 0,
+             "performance_tier": 0,
+             "highest_ranking": 0,
+             "user_name": "prathvimendon",
+             "display_name": "prathvimendon",
+             "is_admin": false,
+             "experiment_group": 1,
+             "newsletter_subscriber": false,
+             "block_emails": false,
+                 
+                 "competitions_tier": 0,
+                 "competitions_tier_attained_at" : 1507797532,
+                 "kernels_tier": 0,
+                 "kernels_tier_attained_at" : 1507797532,
+                 "discussion_tier": 0,
+                 "discussion_tier_attained_at" : 1507797532,
+                 
+                              "datasets_count": 0,
+                 "last_dataset_created_at": null,
+                 "last_dataset_validation_error_at": null,
+                 "last_new_dataset_visit_at": null,
+                 "host_page_visits": 0,
+             "delete_account_reason": ""
+        };
+    </script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets"/>
+    <meta name="og:url" content="https://www.kaggle.com/karthickveerakumar/salary-data-simple-linear-regression" />
+    <meta name="og:title" content="Salary data - Simple linear regression" />
+    <meta name="og:description" content="Machine Learning A - Z" />
+    <meta name="og:image" content="https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-card.png" />
+
+
+    
+    
+    <script type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"Salary data - Simple linear regression","description":"","url":"https://www.kaggle.comkarthickveerakumar/salary-data-simple-linear-regression","sameAs":"https://staging.kaggle.com/karthickveerakumar/salary-data-simple-linear-regression","version":1,"keywords":["small"],"license":{"@type":"CreativeWork","name":"Unknown","url":null},"identifier":"10624","includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"karthickveerakumar","url":"https://www.kaggle.com//karthickveerakumar","image":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com//karthickveerakumar/salary-data-simple-linear-regression/downloads/salary-data-simple-linear-regression.zip/1","contentSize":"338 bytes"},{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"csv","fileFormat":"csv","contentUrl":"https://www.kaggle.com//karthickveerakumar/salary-data-simple-linear-regression/downloads/Salary_Data.csv","contentSize":"454 bytes"}],"commentCount":0,"dateModified":"2018-01-22T17:09:38.91","discussionUrl":"https://www.kaggle.comkarthickveerakumar/salary-data-simple-linear-regression/discussion","alternateName":"Machine Learning A - Z","isAccessibleForFree":true,"thumbnailUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-card.png","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":0},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":11},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":62},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":0}]}</script>
+
+
+    
+    
+
+    <script src="/static/assets/manifest.js?v=47a28ec84654"></script>
+<script src="/static/assets/vendor.js?v=1bd171270194"></script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+<div class="site-layout">
+        <div class="site-layout__header">
+            <div data-component-name="SiteHeaderContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({});performance && performance.mark && performance.mark("SiteHeaderContainer.componentCouldBootstrap");</script>
+        </div>
+
+    <div class="site-layout__main-content">
+        
+
+<div data-component-name="DatasetContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"scripts":[{"name":"mylinearregression","url":"/prathvimendon/mylinearregression","lastRunDate":"2018-02-05T11:27:08.827Z","totalVotes":0}],"discussions":[],"pageMessages":[],"suggestions":[],"discussion":{"canDownvote":false,"dataUrl":"/forums/17990/topics.json","id":17990,"isRootLevel":false,"isSubscribed":false,"initialTopics":null,"paramValues":{"category":"all","kind":"all","page":1,"search":null,"group":"all","sortBy":"hot"}},"currentTab":"home","newTopic":{"allowAttachments":true,"authorRanking":null,"authorTier":"novice","authorType":"topic","forumId":17990,"parentName":"Salary data - Simple linear regression","parentUrl":"/karthickveerakumar/salary-data-simple-linear-regression"},"categories":{"categories":[{"id":null,"name":"small","fullPath":null,"listingUrl":null,"tagUrl":null,"fontAwesomeIcon":null,"description":"Dataset size: small (\u003c10MB)","isInherited":true,"datasetCount":0,"competitionCount":0,"scriptCount":0,"totalCount":0}],"type":"dataset"},"upvoteSuggestion":{"voteCount":0,"upVoteUrl":"/karthickveerakumar/salary-data-simple-linear-regression/vote","upvoters":[]},"readerGroupId":null,"writerGroupId":null,"collaborators":{"owner":{"userId":371640,"groupId":null,"profileUrl":"/karthickveerakumar","thumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","name":"karthickveerakumar","slug":"karthickveerakumar","userTier":0,"joinDate":null,"type":"owner","isUser":true,"isGroup":false},"collaborators":[]},"datasetId":10624,"overview":"Machine Learning A - Z","description":"","isRemoved":false,"isVersionRemoved":false,"isFeatured":false,"isSuperFeatured":false,"scheduledToBeFeatured":null,"scheduledToBeUnFeatured":null,"scheduledToBeSuperFeatured":null,"scheduledToBeUnSuperFeatured":null,"privateGroupId":null,"datasetVersionId":14867,"datasetVersionNumber":1,"lastVersionNumber":1,"datasetUrl":"/karthickveerakumar/salary-data-simple-linear-regression","datasetExternalUrl":"https://www.kaggle.com/karthickveerakumar/salary-data-simple-linear-regression","originalImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/default-backgrounds/41.png","coverImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-cover.png","cardImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-card.png","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-thumbnail.png","license":{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":null},"voteCount":0,"upVoteUrl":"/karthickveerakumar/salary-data-simple-linear-regression/vote","creatorUserId":371640,"creatorDisplayName":"karthickveerakumar","ownerTwitter":null,"lastUpdated":"2018-01-22T17:09:38.91Z","downloadUrl":"/karthickveerakumar/salary-data-simple-linear-regression/downloads/salary-data-simple-linear-regression.zip/1","downloadSize":338,"newNotebookUrl":"/prathvimendon/kernels/notebooks/new?datasetVersionId=14867","newScriptUrl":"/prathvimendon/kernels/scripts/new?datasetVersionId=14867","hasAlreadyVotedUp":false,"isOldDatasetVersion":false,"numberOfViews":62,"numberOfDownloads":11,"numberOfScripts":0,"numberOfTopics":0,"privateGroupMemberCount":0,"canEdit":false,"canPerformOwnerTasks":false,"canEditSlug":false,"canEditPublishStatus":false,"canEditFeatureStatus":false,"canEditPrivateGroup":false,"canEditDescription":true,"hideVersionStatuses":true,"cardImageLeft":650,"cardImageTop":0,"cardImageWidth":600,"cardImageHeight":600,"coverImageLeft":0,"coverImageTop":100,"coverImageWidth":1900,"coverImageHeight":400,"datasetVersions":[{"id":14867,"slug":"salary-data-simple-linear-regression","name":"Salary data - Simple linear regression","creationDate":"2018-01-22T17:09:38.91Z","versionNumber":1,"versionNotes":"Initial release","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-41.png-371640/dataset-thumbnail.png","datasetVersionUrl":"/karthickveerakumar/salary-data-simple-linear-regression/version/1","status":"ready","userMessage":null,"isRemoved":false}],"contributors":[],"feed":[{"activityType":"dataset","url":"/karthickveerakumar/salary-data-simple-linear-regression","userName":"karthickveerakumar","userAvatarUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","date":"2018-01-22T17:09:38.91Z","userDisplayName":"karthickveerakumar","title":"Salary data - Simple linear regression","versionNumber":1,"userUrl":"/karthickveerakumar"}],"privateGroups":[{"id":0,"name":"Publicly Accessible"}],"topicId":null,"isNewTopic":false,"canSeeCategories":true,"canSeeNewDatasetsList":true,"canSeeDeletionButton":false,"type":"fileset","licenseGroups":[{"id":1,"name":"Creative Commons","licenses":[{"id":1,"name":"CC0: Public Domain","description":"CC0: Public Domain \u003ca href=\u0022https://creativecommons.org/publicdomain/zero/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/publicdomain/zero/1.0/","displaySequence":1},{"id":3,"name":"CC BY-NC-SA 4.0","description":"CC BY-NC-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-nc-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-nc-sa/4.0/","displaySequence":2},{"id":8,"name":"CC BY-SA 4.0","description":"CC BY-SA 4.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/4.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/4.0/","displaySequence":3},{"id":10,"name":"CC BY-SA 3.0","description":"CC BY-SA 3.0 \u003ca href=\u0022https://creativecommons.org/licenses/by-sa/3.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://creativecommons.org/licenses/by-sa/3.0/","displaySequence":4}],"displaySequence":1},{"id":2,"name":"GPL","licenses":[{"id":9,"name":"GPL 2","description":"GPL 2 \u003ca href=\u0022http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html","displaySequence":1}],"displaySequence":2},{"id":3,"name":"Open Database","licenses":[{"id":5,"name":"Database: Open Database, Contents: Database Contents","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: Database Contents \u003ca href=\u0022http://opendatacommons.org/licenses/dbcl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://opendatacommons.org/licenses/dbcl/1.0/","displaySequence":1},{"id":6,"name":"Database: Open Database, Contents: © Original Authors","description":"Database: Open Database \u003ca href=\u0022http://opendatacommons.org/licenses/odbl/1.0/\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e, Contents: © Original Authors","url":"http://opendatacommons.org/licenses/odbl/1.0/","displaySequence":2}],"displaySequence":3},{"id":4,"name":"Special Cases","licenses":[{"id":7,"name":"World Bank Dataset Terms of Use","description":"World Bank Dataset Terms of Use \u003ca href=\u0022http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html","displaySequence":1},{"id":2,"name":"Reddit API Terms","description":"Reddit API Terms \u003ca href=\u0022https://www.reddit.com/wiki/api\u0022 target=\u0022_blank\u0022\u003e\u003cspan class=\u0022fa fa-info-circle\u0022/\u003e\u003c/a\u003e","url":"https://www.reddit.com/wiki/api","displaySequence":2}],"displaySequence":4},{"id":5,"name":"Other","licenses":[{"id":11,"name":"Data files © Original Authors","description":"Data files © Original Authors","url":null,"displaySequence":1},{"id":12,"name":"Other (specified in description)","description":"Other (specified in description)","url":null,"displaySequence":2},{"id":4,"name":"Unknown","description":"Unknown","url":null,"displaySequence":3}],"displaySequence":5}],"owners":[{"id":1329380,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"prathvimendon","profileUrl":"/prathvimendon","slug":"prathvimendon","maxFileSizeBytes":null,"userTier":null},{"id":371640,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"karthickveerakumar","profileUrl":"/karthickveerakumar","slug":"karthickveerakumar","maxFileSizeBytes":null,"userTier":0}],"canSeeDatasetWorker":true,"canChangePrivacy":false,"referrer":null,"title":"Salary data - Simple linear regression","slug":"salary-data-simple-linear-regression","licenseId":4,"data":{"id":14867,"datasetId":10624,"datasetVersionType":"fileset","versionNumber":1,"zipBlobFileId":378128,"totalSize":454,"name":"Salary data - Simple linear regression","description":"","type":"datasetVersion","children":[{"id":37223,"blobFileId":378127,"url":"/karthickveerakumar/salary-data-simple-linear-regression/downloads/Salary_Data.csv","relativePath":"../input/Salary_Data.csv","creationDate":"2018-01-22T17:09:33.916Z","ownerSlug":"karthickveerakumar","datasetSlug":"salary-data-simple-linear-regression","datasetVersionNumber":1,"isDummy":false,"size":454,"fullPath":null,"previewUrl":null,"downloadUrl":"/karthickveerakumar/salary-data-simple-linear-regression/downloads/Salary_Data.csv","fileType":".csv","validationErrors":null,"name":"Salary_Data.csv","description":"","type":"datasetVersionFile","children":[{"columns":[{"name":"YearsExperience","description":null,"order":0,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null},{"name":"Salary","description":null,"order":1,"originalType":"","type":"numeric","isNullable":false,"isPrimaryKey":false,"info":null}],"totalRows":null,"name":null,"description":null,"type":"genericTable","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"collapsed":false,"info":{"metrics":null},"settings":null}],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}},"isPublished":true,"isPrivate":false,"owner":{"id":371640,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","isOrganization":false,"name":"karthickveerakumar","profileUrl":"/karthickveerakumar","slug":"karthickveerakumar","maxFileSizeBytes":null,"userTier":0}});performance && performance.mark && performance.mark("DatasetContainer.componentCouldBootstrap");</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX", "TeX"],
+            linebreaks: {
+                automatic: true
+            },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno"
+        },
+        TeX: {
+            noUndefined: {
+                attributes: {
+                    mathcolor: "red",
+                    mathbackground: "#FFEEEE",
+                    mathsize: "90%"
+                }
+            }
+        },
+        Macros: {
+            href: "{}"
+        },
+        skipStartupTypeset: true,
+        messageStyle: "none"
+    });
+</script>
+
+<script type="text/javascript" async crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    </div>
+
+        <div class="site-layout__footer">
+            <footer class="site-footer">
+    <div class="site-footer__content">
+        <div class="site-footer__copyright">
+            <span>&copy; 2018 Kaggle Inc</span>
+        </div>
+        <nav class="site-footer__nav">
+            <a href="/team">Our Team</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact/Support</a>
+        </nav>
+        <nav class="site-footer__social">
+            <div data-component-name="SocialIcons" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push();performance && performance.mark && performance.mark("SocialIcons.componentCouldBootstrap");</script>
+        </nav>
+    </div>
+</footer>
+
+        </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 1329380,
+        userProfileUrl: '/prathvimendon',
+        userDisplayNameEscaped: 'prathvimendon',
+        userThumbnailUrl: 'https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png',
+        userEmail: 'prathvikumari1805@gmail.com',
+        userIsPhoneVerified: true,
+        userName: 'prathvimendon',
+        tier: 'Novice',
+        hasJupyterNotebookEditor: true,
+        hasEnvironmentVariables: false,
+        hasInteractiveScripts: true,
+        hasKernelsAsDataSources: true,
+        antiForgeryToken: 'ZB72VO9hNOOYCrRhzaqH3sKXfDNWrfJdNEbthdy6PWWPL_P5PtaXbBs7ys_CngbbftW00BfW8QuzCmhHrzl-H3M_4J01',
+        isAnonymous: false,
+        isFullScreen: false,
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+          var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+          if (textVersion) {
+              return textVersion;
+          }
+        } catch(ex) {}
+        
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+<script src="/content/v/5dbea6ee9ce1/shared/js/kaggle.prism.min.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+/* <![CDATA[ */
+goog_snippet_vars = function() {
+    var w = window;
+    w.google_conversion_id = 955616553;
+    w.google_conversion_label = "-SL0CM3tqXMQqZrWxwM";
+    w.google_conversion_value = 0.00;
+    w.google_conversion_currency = "USD";
+    w.google_remarketing_only = false;
+    w.google_conversion_language = "en";
+    w.google_conversion_format = "3";
+    w.google_conversion_color = "ffffff";
+}
+// DO NOT CHANGE THE CODE BELOW.
+goog_report_conversion = function(url) {
+    goog_snippet_vars();
+    window.google_conversion_format = "3";
+    var opt = new Object();
+    opt.onload_callback = function() {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+        conv_handler(opt);
+    }
+}
+/* ]]> */
+</script>
+<script type="text/javascript"
+src="//www.googleadservices.com/pagead/conversion_async.js">
+</script>
+
+
+
+
+    <!-- Cheers, RD00155D72653Ap. -->
+
+    <script src="/static/assets/app.js?v=95b3e681f3b2"></script>
+    
+        <script>
+            (function() {
+                if ('serviceWorker' in navigator) {
+                    
+                    navigator.serviceWorker.register("/static/assets/service-worker.js").then(function(reg) {
+                        
+                        reg.onupdatefound = function() {
+                            
+                            var installingWorker = reg.installing;
+                            installingWorker.onstatechange = function() {
+                                switch (installingWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+                                        
+                                        console.log('New or updated content is available.');
+                                    } else {
+                                        
+                                        console.log('Content is now available offline!');
+                                    }
+                                    break;
+                                case 'redundant':
+                                    console.error('The installing service worker became redundant.');
+                                    break;
+                                }
+                            };
+                        };
+                    }).catch(function(e) {
+                      console.error('Error during service worker registration:', e);
+                    });
+                }
+            })();
+        </script>
+</body>
+</html>
