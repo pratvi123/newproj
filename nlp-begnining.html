@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nlp_begnining | Kaggle</title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">    <meta name="theme-color" content="#008ABC" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" /><link rel="dns-prefetch" href="https://stats.g.doubleclick.net" /><link rel="dns-prefetch" href="https://js.intercomcdn.com" /><link rel="preload" href="https://az416426.vo.msecnd.net/scripts/a/ai.0.js" as=script /><link rel="dns-prefetch" href="https://kaggle2.blob.core.windows.net" />
+    <link href="/content/v/d420a040e581/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="manifest" href="/static/json/manifest.json">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic" rel='stylesheet' type='text/css'>
+<link rel="canonical" href="/prathvimendon/nlp-begnining" />                    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=72f4ef2ebe4f"/>
+        <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=03213588eea6"/>
+        <script>
+            
+            (function () {
+                var originalError = window.onerror;
+
+                window.onerror = function (message, url, lineNumber, columnNumber, error) {
+                    var handled = originalError && originalError(message, url, lineNumber, columnNumber, error);
+                    var blockedByCors = message && message.toLowerCase().indexOf("script error") >= 0;
+                    return handled || blockedByCors;
+                };
+            })();
+        </script>
+    <script>
+        var appInsights=window.appInsights||function(config){
+        function i(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",y=u.createElement(o),r,f;y.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(y);try{t.cookie=u.cookie}catch(p){}for(t.queue=[],t.version="1.0",r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)i("track"+r.pop());return i("set"+s),i("clear"+s),i(h+a),i(c+a),i(h+v),i(c+v),i("flush"),config.disableExceptionTracking||(r="onerror",i("_"+r),f=e[r],e[r]=function(config,i,u,e,o){var s=f&&f(config,i,u,e,o);return s!==!0&&t["_"+r](config,i,u,e,o),s}),t
+        }({
+            instrumentationKey:"5b3d6014-f021-4304-8366-3cf961d5b90f",
+            disableAjaxTracking: true
+        });
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+    
+    
+    
+ 
+    
+    <script>
+    window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
+    ga('create', 'UA-12629138-1', 'auto');
+    ga('set', 'displayFeaturesTask', null);
+    ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+    
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq("set", "autoConfig", "false", "136809193586742");
+    fbq('init', '136809193586742'); 
+    fbq('track', 'PageView');
+</script>
+<noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=136809193586742&ev=PageView&noscript=1"/>
+</noscript>
+
+    
+
+    <script>
+         window.intercomSettings = {
+        app_id: "koj6gxx6",
+            name: "prathvimendon",
+            email: "prathvikumari1805@gmail.com",
+            created_at: 1507794362,
+            user_hash: "e3f85f4ca648ecc381bacb7458bd773eec8913dd155b212ce401c1167e450c1e",
+            "last_visit_date_at": 1518688330,  
+            "is_activated": true,
+            "is_locked_out": false,
+            "points": 0,
+             "ranking": 0,
+             "tier": 0,
+             "performance_tier": 0,
+             "highest_ranking": 0,
+             "user_name": "prathvimendon",
+             "display_name": "prathvimendon",
+             "is_admin": false,
+             "experiment_group": 1,
+             "newsletter_subscriber": false,
+             "block_emails": false,
+                 
+                 "competitions_tier": 0,
+                 "competitions_tier_attained_at" : 1507797532,
+                 "kernels_tier": 0,
+                 "kernels_tier_attained_at" : 1507797532,
+                 "discussion_tier": 0,
+                 "discussion_tier_attained_at" : 1507797532,
+                 
+                              "datasets_count": 0,
+                 "last_dataset_created_at": null,
+                 "last_dataset_validation_error_at": null,
+                 "last_new_dataset_visit_at": null,
+                 "host_page_visits": 0,
+             "delete_account_reason": ""
+        };
+    </script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/koj6gxx6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+    
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+    <meta name="og:url" content="https://www.kaggle.com/prathvimendon/nlp-begnining?scriptVersionId=2313876" />
+    <meta name="og:title" content="nlp_begnining" />
+    <meta name="og:description" content="Using data from Bag of Words Meets Bags of Popcorn: Data" />
+    <meta name="og:image" content="https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-38.png-1293750/dataset-thumbnail.png" />
+
+
+    
+    
+
+    
+    
+
+    <script src="/static/assets/manifest.js?v=47a28ec84654"></script>
+<script src="/static/assets/vendor.js?v=377d3285d826"></script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+<div class="site-layout">
+        <div class="site-layout__header">
+            <div data-component-name="SiteHeaderContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({});performance && performance.mark && performance.mark("SiteHeaderContainer.componentCouldBootstrap");</script>
+        </div>
+
+    <div class="site-layout__main-content">
+        
+
+
+<div data-component-name="ScriptViewer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"pageMessages":[{"id":null,"type":"error","message":null,"dangerousHtmlMessage":"The kernel was killed for running longer than 3600 seconds.","isPersistent":false,"faIcon":null}],"log":"[{\n  \u0022data\u0022: \u0022[NbConvertApp] Converting notebook __temp_notebook_source__.ipynb to html\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.4756407040404156\n},{\n  \u0022data\u0022: \u0022[NbConvertApp] Writing 471512 bytes to __results__.html\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.8145497620571405\n}{\n  \u0022data\u0022: \u0022[NbConvertApp] Converting notebook __temp_notebook_source__.ipynb to notebook\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.509938455070369\n},{\n  \u0022data\u0022: \u0022[NbConvertApp] Executing notebook with kernel: python3\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.5455736969597638\n},{\n  \u0022data\u0022: \u0022[NbConvertApp] Writing 217821 bytes to __notebook__.ipynb\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 312.878422643058\n}{\n  \u0022data\u0022: \u0022[NbConvertApp] Converting notebook __notebook__.ipynb to html\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.525848808931187\n},{\n  \u0022data\u0022: \u0022[NbConvertApp] Writing 471257 bytes to __results__.html\\n\u0022,\n  \u0022stream_name\u0022: \u0022stderr\u0022,\n  \u0022time\u0022: 3.877240745932795\n}\u0022}]","code":"{\u0022cells\u0022: [{\u0022source\u0022: [\u0022# This Python 3 environment comes with many helpful analytics libraries installed\\n\u0022, \u0022# It is defined by the kaggle/python docker image: https://github.com/kaggle/docker-python\\n\u0022, \u0022# For example, here\u0027s several helpful packages to load in \\n\u0022, \u0022\\n\u0022, \u0022import numpy as np # linear algebra\\n\u0022, \u0022import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)\\n\u0022, \u0022train=pd.read_csv(\\\u0022../input/labeledTrainData.tsv\\\u0022,header=0,delimiter=\u0027\\\\t\u0027,quoting=3)\\n\u0022, \u0022print(train)\\n\u0022, \u0022print(train.shape)\\n\u0022, \u0022# Input data files are available in the \\\u0022../input/\\\u0022 directory.\\n\u0022, \u0022# For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory\\n\u0022, \u0022\\n\u0022, \u0022\\n\u0022, \u0022\\n\u0022, \u0022# Any results you write to the current directory are saved as output.\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u00229fe1b5de75086ab573b6705995336ca2ed132a34\u0022, \u0022_cell_guid\u0022: \u00220334ed36-ffbe-45dc-ab15-12382c317354\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 1}, {\u0022source\u0022: [\u0022train.columns.values\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u0022d971b87919518cc093cf5a92b2a95fde522b1273\u0022, \u0022_cell_guid\u0022: \u0022a107d5cb-11df-4b3d-96f2-d1565ab4d4f3\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 2}, {\u0022source\u0022: [\u0022print(train[\\\u0022review\\\u0022][0])\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u00224d6adafb6c3842d60dd530753e624dbc90fd19bc\u0022, \u0022_cell_guid\u0022: \u00222316995c-a345-44d4-b82d-61aa71507838\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 3}, {\u0022source\u0022: [\u0022from bs4 import BeautifulSoup\\n\u0022, \u0022example1 = BeautifulSoup(train[\\\u0022review\\\u0022][0])  \\n\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u00229b22cc5041f3bb5128857c5b52b3aa335e9e2906\u0022, \u0022_cell_guid\u0022: \u002295a0a826-3366-4001-8994-d4c46009940a\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 4}, {\u0022source\u0022: [\u0022print(train[\\\u0022review\\\u0022][0])\\n\u0022, \u0022print(\\\u0022#\\\u0022*40)\\n\u0022, \u0022print(example1.get_text())\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u002269757a50a24e28f7bde7a741dc5c929218cc5cd9\u0022, \u0022_cell_guid\u0022: \u00227382a14b-a50f-4d70-b0bc-b87edcd901ed\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 5}, {\u0022source\u0022: [\u0022import re\\n\u0022, \u0022# Use regular expressions to do a find-and-replace\\n\u0022, \u0022letters_only = re.sub(\\\u0022[^a-zA-Z]\\\u0022,           # The pattern to search for\\n\u0022, \u0022                      \\\u0022 \\\u0022,                   # The pattern to replace it with\\n\u0022, \u0022                      example1.get_text() )  # The text to search\\n\u0022, \u0022print(letters_only)\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u002245deaf4b6aa55d1fbaeb82890c8f0684efcfe5cc\u0022, \u0022_cell_guid\u0022: \u0022b595efad-4b07-4f51-a719-e2a43f5c677e\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 6}, {\u0022source\u0022: [\u0022#tokenaizarion\\n\u0022, \u0022lower_case = letters_only.lower()        # Convert to lower case\\n\u0022, \u0022words = lower_case.split()   \u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u0022151bae875e86ee5520b6584bb67d766e9ec5db6b\u0022, \u0022_cell_guid\u0022: \u00226389bef5-c742-4230-b492-3ab905f55b24\u0022, \u0022collapsed\u0022: true}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 7}, {\u0022source\u0022: [\u0022words\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u0022185364c96748dfd34d9036c1e0670e7263157e0f\u0022, \u0022_cell_guid\u0022: \u0022486c1e99-2318-4c9e-9432-74beb3c2a190\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 8}, {\u0022source\u0022: [\u0022from nltk.corpus import stopwords # Import the stop word list\\n\u0022, \u0022print(stopwords.words(\\\u0022english\\\u0022)) \u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u0022e5b5eedf1c153a74b55d5667d37b2fa2452570e4\u0022, \u0022_cell_guid\u0022: \u00225104b719-a5ca-469f-85e7-40bfd20ed8b9\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 9}, {\u0022source\u0022: [\u0022words = [w for w in words if not w in stopwords.words(\\\u0022english\\\u0022)]\\n\u0022, \u0022print(words)\u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u00226d2d42412e6247131daa5ad0db6f436a2856ddde\u0022, \u0022_cell_guid\u0022: \u002267f1a17b-3798-4b63-83c6-f848da53db59\u0022}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 10}, {\u0022source\u0022: [\u0022#applying for all the review so wrting the function\\n\u0022, \u0022def review_to_words( raw_review ):\\n\u0022, \u0022    # Function to convert a raw review to a string of words\\n\u0022, \u0022    # The input is a single string (a raw movie review), and \\n\u0022, \u0022    # the output is a single string (a preprocessed movie review)\\n\u0022, \u0022    #\\n\u0022, \u0022    # 1. Remove HTML\\n\u0022, \u0022    review_text = BeautifulSoup(raw_review).get_text() \\n\u0022, \u0022    #\\n\u0022, \u0022    # 2. Remove non-letters        \\n\u0022, \u0022    letters_only = re.sub(\\\u0022[^a-zA-Z]\\\u0022, \\\u0022 \\\u0022, review_text) \\n\u0022, \u0022    #\\n\u0022, \u0022    # 3. Convert to lower case, split into individual words\\n\u0022, \u0022    words = letters_only.lower().split()                             \\n\u0022, \u0022    #\\n\u0022, \u0022    # 4. In Python, searching a set is much faster than searching\\n\u0022, \u0022    #   a list, so convert the stop words to a set\\n\u0022, \u0022    stops = set(stopwords.words(\\\u0022english\\\u0022))                  \\n\u0022, \u0022    # \\n\u0022, \u0022    # 5. Remove stop words\\n\u0022, \u0022    meaningful_words = [w for w in words if not w in stops]   \\n\u0022, \u0022    #\\n\u0022, \u0022    # 6. Join the words back into one string separated by space, \\n\u0022, \u0022    # and return the result.\\n\u0022, \u0022    return( \\\u0022 \\\u0022.join( meaningful_words ))   \u0022], \u0022metadata\u0022: {\u0022_uuid\u0022: \u0022c18e88795b32a6b334a76037f9ffb76fab42be9f\u0022, \u0022_cell_guid\u0022: \u00220df2e014-a077-4d65-b084-89456c75f9b2\u0022, \u0022collapsed\u0022: true}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 11}, {\u0022source\u0022: [\u0022clean_review = review_to_words( train[\\\u0022review\\\u0022][0] )\\n\u0022, \u0022print(clean_review)\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 12}, {\u0022source\u0022: [\u0022# Get the number of reviews based on the dataframe column size\\n\u0022, \u0022num_reviews = train[\\\u0022review\\\u0022].size\\n\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 14}, {\u0022source\u0022: [\u0022# Initialize an empty list to hold the clean reviews\\n\u0022, \u0022clean_train_reviews = []\\n\u0022, \u0022\\n\u0022, \u0022# Loop over each review; create an index i that goes from 0 to the length\\n\u0022, \u0022# of the movie review list \\n\u0022, \u0022for i in range( 0, num_reviews ):\\n\u0022, \u0022    # Call our function for each one, and add the result to the list of\\n\u0022, \u0022    # clean reviews\\n\u0022, \u0022    clean_train_reviews.append( review_to_words( train[\\\u0022review\\\u0022][i] ) )\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 16}, {\u0022source\u0022: [\u0022print(\\\u0022Cleaning and parsing the training set movie reviews...\\\\n\\\u0022)\\n\u0022, \u0022clean_train_reviews = []\\n\u0022, \u0022for i in range( 0, num_reviews ):\\n\u0022, \u0022    # If the index is evenly divisible by 1000, print a message\\n\u0022, \u0022    if( (i+1)%1000 == 0 ):\\n\u0022, \u0022        print(\\\u0022Review %d of %d\\\\n\\\u0022 % ( i+1, num_reviews ) )                                                                   \\n\u0022, \u0022    clean_train_reviews.append( review_to_words( train[\\\u0022review\\\u0022][i] ))\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 18}, {\u0022source\u0022: [\u0022print(\\\u0022Creating the bag of words...\\\\n\\\u0022)\\n\u0022, \u0022from sklearn.feature_extraction.text import CountVectorizer\\n\u0022, \u0022\\n\u0022, \u0022# Initialize the \\\u0022CountVectorizer\\\u0022 object, which is scikit-learn\u0027s\\n\u0022, \u0022# bag of words tool.  \\n\u0022, \u0022vectorizer = CountVectorizer(analyzer = \\\u0022word\\\u0022,   \\n\u0022, \u0022                             tokenizer = None,    \\n\u0022, \u0022                             preprocessor = None, \\n\u0022, \u0022                             stop_words = None,   \\n\u0022, \u0022                             max_features = 5000) \\n\u0022, \u0022\\n\u0022, \u0022# fit_transform() does two functions: First, it fits the model\\n\u0022, \u0022# and learns the vocabulary; second, it transforms our training data\\n\u0022, \u0022# into feature vectors. The input to fit_transform should be a list of \\n\u0022, \u0022# strings.\\n\u0022, \u0022train_data_features = vectorizer.fit_transform(clean_train_reviews)\\n\u0022, \u0022\\n\u0022, \u0022# Numpy arrays are easy to work with, so convert the result to an \\n\u0022, \u0022# array\\n\u0022, \u0022train_data_features = train_data_features.toarray()\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 20}, {\u0022source\u0022: [\u0022train_data_features\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 21}, {\u0022source\u0022: [\u0022print(train_data_features.shape)\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 22}, {\u0022source\u0022: [\u0022# Take a look at the words in the vocabulary\\n\u0022, \u0022vocab = vectorizer.get_feature_names()\\n\u0022, \u0022print(vocab)\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 23}, {\u0022source\u0022: [\u0022import numpy as np\\n\u0022, \u0022\\n\u0022, \u0022# Sum up the counts of each vocabulary word\\n\u0022, \u0022dist = np.sum(train_data_features, axis=0)\\n\u0022, \u0022\\n\u0022, \u0022# For each, print the vocabulary word and the number of times it \\n\u0022, \u0022# appears in the training set\\n\u0022, \u0022for tag, count in zip(vocab, dist):\\n\u0022, \u0022    print(count, tag)\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 24}, {\u0022source\u0022: [\u0022print(\\\u0022Training the random forest...\\\u0022)\\n\u0022, \u0022from sklearn.ensemble import RandomForestClassifier\\n\u0022, \u0022\\n\u0022, \u0022# Initialize a Random Forest classifier with 100 trees\\n\u0022, \u0022forest = RandomForestClassifier(n_estimators = 100) \\n\u0022, \u0022\\n\u0022, \u0022# Fit the forest to the training set, using the bag of words as \\n\u0022, \u0022# features and the sentiment labels as the response variable\\n\u0022, \u0022#\\n\u0022, \u0022# This may take a few minutes to run\\n\u0022, \u0022forest = forest.fit( train_data_features, train[\\\u0022sentiment\\\u0022] )\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 25}, {\u0022source\u0022: [\u0022forest\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 27}, {\u0022source\u0022: [\u0022test = pd.read_csv(\\\u0022../input/testData.tsv\\\u0022, header=0, delimiter=\\\u0022\\\\t\\\u0022, \\n\u0022, \u0022                   quoting=3 )\\n\u0022, \u0022\\n\u0022, \u0022# Verify that there are 25,000 rows and 2 columns\\n\u0022, \u0022print(test.shape)\\n\u0022, \u0022\\n\u0022, \u0022# Create an empty list and append the clean reviews one by one\\n\u0022, \u0022num_reviews = len(test[\\\u0022review\\\u0022])\\n\u0022, \u0022clean_test_reviews = [] \\n\u0022, \u0022\\n\u0022, \u0022print(\\\u0022Cleaning and parsing the test set movie reviews...\\\\n\\\u0022)\\n\u0022, \u0022for i in range(0,num_reviews):\\n\u0022, \u0022    if( (i+1) % 1000 == 0 ):\\n\u0022, \u0022        print(\\\u0022Review %d of %d\\\\n\\\u0022 % (i+1, num_reviews))\\n\u0022, \u0022    clean_review = review_to_words( test[\\\u0022review\\\u0022][i] )\\n\u0022, \u0022    clean_test_reviews.append( clean_review )\\n\u0022, \u0022\\n\u0022, \u0022# Get a bag of words for the test set, and convert to a numpy array\\n\u0022, \u0022test_data_features = vectorizer.transform(clean_test_reviews)\\n\u0022, \u0022test_data_features = test_data_features.toarray()\\n\u0022, \u0022\\n\u0022, \u0022# Use the random forest to make sentiment label predictions\\n\u0022, \u0022result = forest.predict(test_data_features)\\n\u0022, \u0022\\n\u0022, \u0022# Copy the results to a pandas dataframe with an \\\u0022id\\\u0022 column and\\n\u0022, \u0022# a \\\u0022sentiment\\\u0022 column\\n\u0022, \u0022output = pd.DataFrame( data={\\\u0022id\\\u0022:test[\\\u0022id\\\u0022], \\\u0022sentiment\\\u0022:result} )\\n\u0022, \u0022print(output)\\n\u0022, \u0022# Use pandas to write the comma-separated output file\\n\u0022, \u0022output.to_csv( \\\u0022Bag_of_Words_model.csv\\\u0022, index=False, quoting=3 )\u0022], \u0022metadata\u0022: {}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: 29}, {\u0022source\u0022: [], \u0022metadata\u0022: {\u0022collapsed\u0022: true}, \u0022cell_type\u0022: \u0022code\u0022, \u0022outputs\u0022: [], \u0022execution_count\u0022: null}], \u0022nbformat\u0022: 4, \u0022nbformat_minor\u0022: 1, \u0022metadata\u0022: {\u0022language_info\u0022: {\u0022version\u0022: \u00223.6.4\u0022, \u0022nbconvert_exporter\u0022: \u0022python\u0022, \u0022file_extension\u0022: \u0022.py\u0022, \u0022pygments_lexer\u0022: \u0022ipython3\u0022, \u0022codemirror_mode\u0022: {\u0022name\u0022: \u0022ipython\u0022, \u0022version\u0022: 3}, \u0022name\u0022: \u0022python\u0022, \u0022mimetype\u0022: \u0022text/x-python\u0022}, \u0022kernelspec\u0022: {\u0022display_name\u0022: \u0022Python 3\u0022, \u0022name\u0022: \u0022python3\u0022, \u0022language\u0022: \u0022python\u0022}}}","languageName":"Python","htmlOutputFileUrl":"https://www.kaggleusercontent.com/kf/2313876/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.._fR4SFZZUFCY5JmI669vZw.xbGv357xu6lCCDsTrvuEzXi1v6nbOSG7IwlVddI0r5LaH0qYIH2JDNTx70krKtVPl3IcCHwd6T6SSHr2GEV-t_X7zg9bIeaWafd7I-93S9OJUhDkFpKGIhLPgUoGPr7c.FgaDYpgDyYQAGtJiuLNahQ/__results__.html","outputFiles":[{"size":282792,"fullPath":null,"previewUrl":"/kernels/preview.json/2313876/c761414e-be66-1b73-e4e7-8a9a79bf2e83/Bag_of_Words_model.csv","downloadUrl":"https://www.kaggleusercontent.com/kf/2313876/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0.._fR4SFZZUFCY5JmI669vZw.xbGv357xu6lCCDsTrvuEzXi1v6nbOSG7IwlVddI0r5LaH0qYIH2JDNTx70krKtVPl3IcCHwd6T6SSHr2GEV-t_X7zg9bIeaWafd7I-93S9OJUhDkFpKGIhLPgUoGPr7c.FgaDYpgDyYQAGtJiuLNahQ/Bag_of_Words_model.csv","fileType":".csv","validationErrors":"","name":"Bag_of_Words_model.csv","description":null,"type":"file","children":[],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"downloadAllFilesUrl":"/kernels/svzip/2313876","runInfo":{"isValidStatus":true,"failureMessage":"The kernel was killed for running longer than 3600 seconds.","exitCode":0,"succeeded":false,"dockerImageName":"gcr.io/kaggle-images/python","dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python/","dockerImageId":"sha256:9badcdc96f2b93026bdb16937044e674e9f4d0ec4e14d5ba87eaa41753dea7c0","timeoutExceeded":true,"runTimeSeconds":8574.31088388804,"usedAllSpace":false,"queuedSeconds":-0.063,"outputSizeBytes":754068},"versionHistory":[{"id":2315960,"isForkParent":false,"isNotebook":false,"languageName":"Python","lastRunTime":"2018-02-02T10:45:59.823Z","linesChangedFromPrevious":0,"linesDeletedFromPrevious":0,"linesInsertedFromPrevious":0,"outputFilesTotalSizeBytes":754051,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python/","dockerImageId":"sha256:9badcdc96f2b93026bdb16937044e674e9f4d0ec4e14d5ba87eaa41753dea7c0","dockerImageName":"gcr.io/kaggle-images/python","exitCode":0,"failureMessage":"The kernel was killed for running longer than 3600 seconds.","isValidStatus":true,"runTimeSeconds":7154.34922273003,"succeeded":false,"timeoutExceeded":true,"usedAllSpace":false},"status":"error","title":"nlp_begnining","url":"/prathvimendon/nlp-begnining?scriptVersionId=2315960","versionNumber":0,"hasVersionNumber":false,"isDeleted":false,"dockerImage":{"scriptVersionId":2315960,"languageName":"Python","dockerImageVersionId":44,"dockerImageVersionCreationDate":"2018-02-02T00:53:55.323Z","dockerImageTag":"kaggle/python"}},{"id":2313876,"isForkParent":false,"isNotebook":false,"languageName":"Python","lastRunTime":"2018-02-02T06:50:06.24Z","linesChangedFromPrevious":0,"linesDeletedFromPrevious":0,"linesInsertedFromPrevious":135,"outputFilesTotalSizeBytes":754051,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python/","dockerImageId":"sha256:9badcdc96f2b93026bdb16937044e674e9f4d0ec4e14d5ba87eaa41753dea7c0","dockerImageName":"gcr.io/kaggle-images/python","exitCode":0,"failureMessage":"The kernel was killed for running longer than 3600 seconds.","isValidStatus":true,"runTimeSeconds":8574.31088388804,"succeeded":false,"timeoutExceeded":true,"usedAllSpace":false},"status":"error","title":"nlp_begnining","url":"/prathvimendon/nlp-begnining?scriptVersionId=2313876","versionNumber":0,"hasVersionNumber":false,"isDeleted":false,"dockerImage":{"scriptVersionId":2313876,"languageName":"Python","dockerImageVersionId":44,"dockerImageVersionCreationDate":"2018-02-02T00:53:55.323Z","dockerImageTag":"kaggle/python"}},{"id":2305207,"isForkParent":false,"isNotebook":false,"languageName":"Python","lastRunTime":"2018-02-01T11:32:02.537Z","linesChangedFromPrevious":0,"linesDeletedFromPrevious":3,"linesInsertedFromPrevious":37,"outputFilesTotalSizeBytes":289765,"runInfo":{"dockerfileUrl":"https://github.com/Kaggle/docker-python/blob/master/Dockerfile","dockerHubUrl":"https://registry.hub.docker.com/u/kaggle/python/","dockerImageId":"sha256:e2189ad7b9510392a271a22580204591572c21169fa1b538e4f33c8e93325035","dockerImageName":"gcr.io/kaggle-images/python","exitCode":0,"failureMessage":"The kernel was killed for running longer than 3600 seconds.","isValidStatus":true,"runTimeSeconds":16448.1613416401,"succeeded":false,"timeoutExceeded":true,"usedAllSpace":false},"status":"error","title":"Notebook4f13574c23","url":"/prathvimendon/nlp-begnining?scriptVersionId=2305207","versionNumber":0,"hasVersionNumber":false,"isDeleted":false,"dockerImage":{"scriptVersionId":2305207,"languageName":"Python","dockerImageVersionId":42,"dockerImageVersionCreationDate":"2018-01-29T00:24:21.187Z","dockerImageTag":"kaggle/python"}}],"sanitizeHtml":false,"initialScriptVersionId":2313876,"initialTab":null,"baseUrl":"/prathvimendon/nlp-begnining?scriptVersionId=2313876","kernelDeletionUrl":"/kernels/583604/delete","isAdmin":false,"datasetHidden":false,"readOnly":false,"scriptIsLanguageTemplate":false,"rerunScriptUrl":"/kernels/rerun?id=2313876","dataSources":[{"imageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-38.png-1293750/dataset-thumbnail.png","sourceUrl":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data","slug":"bag-of-words-meets-bags-of-popcorn-data","lastUpdated":"2017-12-26T21:12:29.497Z","overview":"","sourceType":"dataset","sourceId":11243,"descriptionMimeType":"text/x-markdown","deleted":false,"private":false,"privateButVisible":false,"name":"Bag of Words Meets Bags of Popcorn: Data","description":"Data Set\n--------\n\nThe labeled data set consists of 50,000 IMDB movie reviews, specially selected for sentiment analysis. The sentiment of reviews is binary, meaning the IMDB rating \u003c 5 results in a sentiment score of 0, and rating \u003e=7 have a sentiment score of 1. No individual movie has more than 30 reviews. The 25,000 review labeled training set does not include any of the same movies as the 25,000 review test set. In addition, there are another 50,000 IMDB reviews provided without any rating labels.\n\nFile descriptions\n-----------------\n\n - **labeledTrainData** - The labeled training set. The file is tab-delimited and has a header row followed by 25,000 rows containing an id, sentiment, and text for each review.  \n - **testData** - The test set. The tab-delimited file has a header row\n   followed by 25,000 rows containing an id and text for each review.\n   Your task is to predict the sentiment for each one. \n - **unlabeledTrainData** - An extra training set with no labels. The\n   tab-delimited file has a header row followed by 50,000 rows\n   containing an id and text for each review.\n\nData fields\n-----------\n\n - **id** - Unique ID of each review \n - **sentiment** - Sentiment of the review; 1 for positive reviews and 0 for negative reviews\n - **review** - Text of the review\n\nAcknowledgements\n----------------\n\nThe origin place is [here][1].\n\n\n  [1]: https://www.kaggle.com/c/word2vec-nlp-tutorial/data/%22here%22","type":"dataSource","children":[{"id":29483,"blobFileId":366132,"url":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/labeledTrainData.tsv","relativePath":"../input/labeledTrainData.tsv","creationDate":"2017-12-26T21:11:15.203Z","ownerSlug":"spatel4140","datasetSlug":"bag-of-words-meets-bags-of-popcorn-data","datasetVersionNumber":2,"isDummy":false,"size":13585269,"fullPath":"../input/labeledTrainData.tsv","previewUrl":null,"downloadUrl":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/labeledTrainData.tsv","fileType":".tsv","validationErrors":null,"name":"labeledTrainData.tsv","description":"","type":"datasetVersionFile","children":[],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":29484,"blobFileId":366133,"url":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/testData.tsv","relativePath":"../input/testData.tsv","creationDate":"2017-12-26T21:12:31.3703215Z","ownerSlug":"spatel4140","datasetSlug":"bag-of-words-meets-bags-of-popcorn-data","datasetVersionNumber":2,"isDummy":false,"size":13258140,"fullPath":"../input/testData.tsv","previewUrl":null,"downloadUrl":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/testData.tsv","fileType":".tsv","validationErrors":null,"name":"testData.tsv","description":"","type":"datasetVersionFile","children":[],"collapsed":false,"info":{"metrics":null},"settings":null},{"id":29485,"blobFileId":366134,"url":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/unlabeledTrainData.tsv","relativePath":"../input/unlabeledTrainData.tsv","creationDate":"2017-12-26T21:12:31.7609249Z","ownerSlug":"spatel4140","datasetSlug":"bag-of-words-meets-bags-of-popcorn-data","datasetVersionNumber":2,"isDummy":false,"size":27243285,"fullPath":"../input/unlabeledTrainData.tsv","previewUrl":null,"downloadUrl":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data/downloads/unlabeledTrainData.tsv","fileType":".tsv","validationErrors":null,"name":"unlabeledTrainData.tsv","description":"","type":"datasetVersionFile","children":[],"collapsed":false,"info":{"metrics":null},"settings":null}],"collapsed":false,"info":{"metrics":null},"settings":{"csvSettings":null,"bigQuerySettings":null}}],"forksBaseUrl":"/kernels/forks/583604/0","totalForks":0,"newForkUrl":"/prathvimendon/kernels/scripts/new?forkParentScriptVersionId=2313876","isNotebook":true,"isRMarkdown":false,"scriptId":583604,"scriptVersionId":2313876,"scriptVersionHasError":true,"userCanEditScript":true,"showSubmitToCompButtons":false,"submitToCompUrl":"","competitionName":"","currentScriptVersionIsBusy":false,"statusCallbackUrl":"/kernels/status?id=-1","forkParentIsDeleted":false,"forkParentUrl":"","forkParentTitle":null,"forkParentAuthorUrl":null,"forkParentAuthorDisplayName":null,"forkDiffUrl":"/prathvimendon/nlp-begnining/versions#base=0\u0026new=2313876","forkDiffLinesChanged":0,"forkDiffLinesDeleted":0,"forkDiffLinesInserted":0,"voteButton":{"totalVotes":0,"hasAlreadyVotedUp":false,"hasAlreadyVotedDown":false,"canUpvote":true,"canDownvote":false,"voteUpUrl":"/kernels/vote?id=583604","voteDownUrl":null,"voters":[],"currentUserInfo":{"avatarThumbnailUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","displayName":"prathvimendon","userName":"prathvimendon","profileUrl":"/prathvimendon","tier":"Novice","tierInt":0,"userId":1329380},"showVoters":true,"alwaysShowVoters":true},"dateUpdated":"2018-02-02T06:50:06.177Z","userName":"prathvimendon","userUrl":"/prathvimendon","userAvatarImageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png","parentName":"Bag of Words Meets Bags of Popcorn: Data","parentUrl":"/spatel4140/bag-of-words-meets-bags-of-popcorn-data","scriptLanguage":"Python notebook","totalViews":0,"title":"nlp_begnining","titleUrl":"/prathvimendon/nlp-begnining?scriptVersionId=2313876","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-38.png-1293750/dataset-thumbnail.png","isPrivate":true,"isCodeSubmission":false,"submission":null,"menuLinks":[{"href":null,"text":"Notebook","title":"Notebook","tab":"notebook","count":null,"showZeroCountExplicitly":false},{"href":null,"text":"Code","title":"Code","tab":"code","count":null,"showZeroCountExplicitly":false},{"href":null,"text":"Data","title":"Data","tab":"data","count":1,"showZeroCountExplicitly":false},{"href":null,"text":"Output","title":"Output","tab":"output","count":1,"showZeroCountExplicitly":false},{"href":null,"text":"Comments","title":"Comments","tab":"comments","count":0,"showZeroCountExplicitly":true},{"href":null,"text":"Log","title":"Log","tab":"log","count":null,"showZeroCountExplicitly":false},{"href":null,"text":"Versions","title":"Versions","tab":"versions","count":3,"showZeroCountExplicitly":false},{"href":null,"text":"Options","title":"Options","tab":"options","count":null,"showZeroCountExplicitly":false}],"rightMenuLinks":[{"href":"/prathvimendon/kernels/notebooks/new?forkParentScriptVersionId=2313876","text":"Fork Notebook","title":"Fork Notebook","tab":null,"count":null,"showZeroCountExplicitly":false}],"callToAction":{"href":"/prathvimendon/nlp-begnining/editnb","text":"Edit Notebook","title":"Edit Notebook","tab":null,"count":null,"showZeroCountExplicitly":false},"topic":{"allowAttachments":false,"canDownvote":false,"comment":null,"commentList":null,"id":null,"isDeleted":false,"isLocked":false,"isPinned":false,"isSpammed":false,"isSubscribed":false,"parentName":null,"parentUrl":null,"title":null},"medal":null,"categories":{"categories":[],"type":"script"},"canSeeUpvoteSuggestion":false,"suggestions":[{"entityType":"kernel","entityId":517313,"title":"Bag of Words Tutorial","entityUrl":"/iyernikhil009/bag-of-words-tutorial","thumbnailImageUrl":"https://kaggle2.blob.core.windows.net/datasets-images/new-version-temp-images/default-backgrounds-38.png-1293750/dataset-thumbnail.png","owner":{"id":1206054,"imageUrl":"https://kaggle2.blob.core.windows.net/avatars/thumbnails/1206054-kg.JPG","isOrganization":false,"name":"Nikhil Iyer","profileUrl":"/iyernikhil009","slug":"iyernikhil009","maxFileSizeBytes":null,"userTier":null}}]});performance && performance.mark && performance.mark("ScriptViewer.componentCouldBootstrap");</script>
+
+
+<form action="/prathvimendon/nlp-begnining" id="__AjaxAntiForgeryForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="yuV9V43LO0E2r4x1MgFFjqIf5IAPGZ_O-jp2yhijhH1KiVXT-O7H1dha4_Cz8vf2I0aB5xkAbCtbTfRDKcQBnZob1II1" /></form>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            preferredFont: "TeX",
+            availableFonts: ["STIX", "TeX"],
+            linebreaks: {
+                automatic: true
+            },
+            EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+        },
+        tex2jax: {
+            inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+            displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+            processEscapes: true,
+            ignoreClass: "tex2jax_ignore|dno"
+        },
+        TeX: {
+            noUndefined: {
+                attributes: {
+                    mathcolor: "red",
+                    mathbackground: "#FFEEEE",
+                    mathsize: "90%"
+                }
+            }
+        },
+        Macros: {
+            href: "{}"
+        },
+        skipStartupTypeset: true,
+        messageStyle: "none"
+    });
+</script>
+
+<script type="text/javascript" async crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+    </div>
+
+        <div class="site-layout__footer">
+            <footer class="site-footer">
+    <div class="site-footer__content">
+        <div class="site-footer__copyright">
+            <span>&copy; 2018 Kaggle Inc</span>
+        </div>
+        <nav class="site-footer__nav">
+            <a href="/team">Our Team</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact/Support</a>
+        </nav>
+        <nav class="site-footer__social">
+            <div data-component-name="SocialIcons" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script>var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push();performance && performance.mark && performance.mark("SocialIcons.componentCouldBootstrap");</script>
+        </nav>
+    </div>
+</footer>
+
+        </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 1329380,
+        userProfileUrl: '/prathvimendon',
+        userDisplayNameEscaped: 'prathvimendon',
+        userThumbnailUrl: 'https://kaggle2.blob.core.windows.net/avatars/thumbnails/default-thumb.png',
+        userEmail: 'prathvikumari1805@gmail.com',
+        userIsPhoneVerified: true,
+        userName: 'prathvimendon',
+        tier: 'Novice',
+        antiForgeryToken: 'FiTC-tPWdqiZoNLCkxBQC66X1QBJsdcZ2XQW-EWyPVbUDVybIae1OvIGK_wpQhIb2bvAlrHecq2tvOH_RhfrT63KqT01',
+        isAnonymous: false,
+        isFullScreen: false,
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+          var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+          if (textVersion) {
+              return textVersion;
+          }
+        } catch(ex) {}
+        
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+
+
+
+
+<script type="text/javascript">
+    var Kaggle = Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+<script src="/content/v/5dbea6ee9ce1/shared/js/kaggle.prism.min.js"></script>
+
+
+
+
+
+
+
+
+
+    <!-- Cheers, RD00155D72653Ap. -->
+
+    <script src="/static/assets/app.js?v=10aadbf527c4"></script>
+    
+        <script>
+            (function() {
+                if ('serviceWorker' in navigator) {
+                    
+                    navigator.serviceWorker.register("/static/assets/service-worker.js").then(function(reg) {
+                        
+                        reg.onupdatefound = function() {
+                            
+                            var installingWorker = reg.installing;
+                            installingWorker.onstatechange = function() {
+                                switch (installingWorker.state) {
+                                case 'installed':
+                                    if (navigator.serviceWorker.controller) {
+                                        
+                                        console.log('New or updated content is available.');
+                                    } else {
+                                        
+                                        console.log('Content is now available offline!');
+                                    }
+                                    break;
+                                case 'redundant':
+                                    console.error('The installing service worker became redundant.');
+                                    break;
+                                }
+                            };
+                        };
+                    }).catch(function(e) {
+                      console.error('Error during service worker registration:', e);
+                    });
+                }
+            })();
+        </script>
+</body>
+</html>
